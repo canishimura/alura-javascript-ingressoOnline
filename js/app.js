@@ -2,6 +2,11 @@ function comprar () {
     let setorSelecionado = document.getElementById('tipo-ingresso').value;
     let quantidadeSelecionada = parseInt(document.getElementById('qtd').value);
 
+    if (isNaN(quantidadeSelecionada) || quantidadeSelecionada <= 0) {
+        alert('Por favor, insira uma quantidade válida e positiva.');
+        return; // Interrompe a execução da função se a quantidade for inválida
+    }
+
     if(setorSelecionado == 'inferior') {
         comprarInferior(quantidadeSelecionada);
     } 
